@@ -16,6 +16,206 @@
 </head>
 
 <body>
-    <div>
+    <div class="container" style="background-color:rgba(255,255,255,0.8)">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- 個人資料 -->
+                <div class="col-md-12">
+                    <div class="col-md-4" style="margin-top:30px;">
+                        <!-- <img src="{{asset($member_whos->avator)}}" class="circle" style="width:200px;"> -->
+                        <div id="linebar" class="linebar"></div>
+                    </div>
+                    <div class="col-md-8" style="margin-top:50px">
+                        <div class="name">吳宗杰</div><br>
+                        <div class="thes">論文主題</div><br>
+                        <div class="thes_con">論文摘要</div><br>
+                        <div class="cont">聯絡方式 / 082216004@ntunhs.edu.tw</div><br>
+                        <div>預計畢業年份：2021</div><br>
+                        <hr style="border-top:1px solid #000000">
+                    </div>
+                </div>
+                <!-- 自我介紹 -->
+                <div class="col-md-12">
+                    <div class="int">目前就讀於國立台北護理健康大學資訊管理碩士班一年級的學生，致力於健康照護物聯網實驗室研究關於物聯網之相關資訊</div><br>
+                </div>
+                <!-- 興趣技能 -->
+                <div class="col-md-12">
+                    <div class="col-md-4">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>個人資料</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>&nbsp;興趣</th>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;&nbsp; • 打電腦</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;&nbsp; • 睡覺</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;&nbsp; • 吃甜食</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;&nbsp; • 運動</td>
+                                </tr>
+                                <tr>
+                                    <th>&nbsp;技能</th>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;&nbsp; • 程式撰寫</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;&nbsp; • 文書處理</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- 生活點滴 -->
+                    <div class="col-md-8" style="background-color:aliceblue">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>生活點滴</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2019/05/25</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- 學經歷 -->
+                <div class="col-md-12" style="padding-top:30px">
+                    <div style="font-size:20px">閱讀列表</div>
+                    <hr style="border-top:1px solid #000000">
+                    <table class="table">
+                        <!-- 論文 -->
+                        <thead>
+                            <tr>
+                                <th>論文 / papers</th>
+                                <th>作者 / author</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>論文名稱</td>
+                                <td>論文作者</td>
+                            </tr>
+                        </tbody>
+                        <!-- 期刊 -->
+                        <thead>
+                            <tr>
+                                <th>期刊 / journals</th>
+                                <th>作者 / author</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>期刊名稱</td>
+                                <td>期刊作者</td>
+                            </tr>
+                        </tbody>
+                        <!-- 雜誌 -->
+                        <thead>
+                            <tr>
+                                <th>雜誌 / magazines</th>
+                                <th>作者 / author</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>雜誌名稱</td>
+                                <td>雜誌作者</td>
+                            </tr>
+                        </tbody>
+                        <!-- 書籍 -->
+                        <thead>
+                            <tr>
+                                <th>書籍 / books</th>
+                                <th>作者 / author</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>書籍名稱</td>
+                                <td>書籍作者</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
+
+<!-- 漸層變色--start -->
+<script>
+    var colors = new Array(
+        [62, 35, 255],
+        [60, 255, 60],
+        [255, 35, 98],
+        [45, 175, 230],
+        [255, 0, 255],
+        [255, 128, 0]);
+
+    var step = 0;
+    //color table indices for: 
+    // current color left
+    // next color left
+    // current color right
+    // next color right
+    var colorIndices = [0, 1, 2, 3];
+
+    //transition speed
+    var gradientSpeed = 0.002;
+
+    function updateGradient() {
+
+        if ($ === undefined) return;
+
+        var c0_0 = colors[colorIndices[0]];
+        var c0_1 = colors[colorIndices[1]];
+        var c1_0 = colors[colorIndices[2]];
+        var c1_1 = colors[colorIndices[3]];
+
+        var istep = 1 - step;
+        var r1 = Math.round(istep * c0_0[0] + step * c0_1[0]);
+        var g1 = Math.round(istep * c0_0[1] + step * c0_1[1]);
+        var b1 = Math.round(istep * c0_0[2] + step * c0_1[2]);
+        var color1 = "rgb(" + r1 + "," + g1 + "," + b1 + ")";
+
+        var r2 = Math.round(istep * c1_0[0] + step * c1_1[0]);
+        var g2 = Math.round(istep * c1_0[1] + step * c1_1[1]);
+        var b2 = Math.round(istep * c1_0[2] + step * c1_1[2]);
+        var color2 = "rgb(" + r2 + "," + g2 + "," + b2 + ")";
+
+        $('#gradient').css({
+            background: "-webkit-gradient(linear, left top, right top, from(" + color1 + "), to(" + color2 + "))"
+        }).css({
+            background: "-moz-linear-gradient(left, " + color1 + " 0%, " + color2 + " 100%)"
+        });
+
+        step += gradientSpeed;
+        if (step >= 1) {
+            step %= 1;
+            colorIndices[0] = colorIndices[1];
+            colorIndices[2] = colorIndices[3];
+
+            //pick two new target color indices
+            //do not pick the same as the current one
+            colorIndices[1] = (colorIndices[1] + Math.floor(1 + Math.random() * (colors.length - 1))) % colors.length;
+            colorIndices[3] = (colorIndices[3] + Math.floor(1 + Math.random() * (colors.length - 1))) % colors.length;
+
+        }
+    }
+
+    setInterval(updateGradient, 10);
+</script>
+<!-- 漸層變色--end-->
